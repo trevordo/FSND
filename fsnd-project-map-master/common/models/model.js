@@ -54,6 +54,7 @@
 		}
 	};
 
+
     //map view model
     function MapViewModel() {
         var self = this;
