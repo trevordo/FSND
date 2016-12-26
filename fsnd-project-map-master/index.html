@@ -16,104 +16,107 @@
   limitations under the License
 -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="An app to discover neighborhood places to go and stay">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FSND Neighborhood Project</title>
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="An app to discover neighborhood places to go and stay">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FSND Neighborhood Project</title>
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="FSND Neighborhood Project">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
 
-    <!-- SEO: If your mobile URL is different from the desktop URL, 
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="FSND Neighborhood Project">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, 
     add a canonical link to the desktop page 
     https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
+  <!--
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-    #view-source {
-      position: fixed;
-      display: block;
-      right: 0;
-      bottom: 0;
-      margin-right: 40px;
-      margin-bottom: 40px;
-      z-index: 900;
-    }
-    </style>
-  </head>
-  <body>
-    <!-- This is where the heading starts #TD -->
-    <div class="project-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-      <header class="project-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-        <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">FSND Neighborhood Project</span>
-          <div class="mdl-layout-spacer"></div>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/material.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <!-- This is where the heading starts -->
+  <div class="project-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="project-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">FSND Neighborhood Project</span>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" data-bind="visible: showMap">
+          <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
               <i class="material-icons">search</i>
             </label>
-            <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="search">
-              <label class="mdl-textfield__label" for="search">Enter your query...</label>
+          <div class="mdl-textfield__expandable-holder">
+            <input class="mdl-textfield__input" type="text" id="search" data-bind="value: inputcity">
+            <label class="mdl-textfield__label" for="search">Enter your query...</label>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="project-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+      <header class="project-drawer-header">
+        <div class="mdl-layout">
+          <input class="mdl-textfield__input" type="text" id="filter" placeholder="filter places...">
+        </div>
+        <div>
+          <span>PUT TABS HERE</span>
+          <!-- Example for added a spacer div
+            <div class="mdl-layout-spacer"></div> -->
+        </div>
+      </header>
+      <nav class="project-navigation mdl-navigation mdl-color--blue-grey-800">
+        <p>Populate list here</p>
+        <div class="mdl-layout-spacer"></div>
+        <p>a spacer above </p>
+      </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+
+      <!-- Contents of main: input and map -->
+      <div class="mdl-typography--text-center welcome-slogan" data-bind="visible: hideStart">
+        <div class="mdl-card mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col mdl-grid main-container">
+          <div class="mdl-card__media">
+          </div>
+          <div class="mdl-card__supporting-text">
+            Welcome to your Neighborhood!
+          </div>
+          <div class="mdl-card__supporting-text">
+            <div class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input welcome-input" type="text" id="new-location" data-bind="value: inputcity, enterKey: toggleMapVisibility">
+              <label class="mdl-textfield__label" for="new-location">Where do you want to explore?</label>
             </div>
           </div>
         </div>
-      </header>
-      <div class="project-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="project-drawer-header">
-            <div class="mdl-layout">
-              <input class="mdl-textfield__input" type="text" id="filter" placeholder="filter places...">
-            </div>
-          <div>
-            <span>PUT TABS HERE</span>
-            <!-- Example for added a spacer div
-            <div class="mdl-layout-spacer"></div> -->
+      </div>
+      <!--MAP view -->
+      <div data-bind="visible: showMap">
+        <div class="mdl-card mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col mdl-grid main-card">
+          <div class="mdl-card__media"><img src="" data-bind="attr: { src: fullUrl }">
           </div>
-        </header>
-        <nav class="project-navigation mdl-navigation mdl-color--blue-grey-800">
-          <p>Populate list here</p>
-          <div class="mdl-layout-spacer"></div>
-          <p>a spacer above </p>
-        </nav>
-      </div>
-      <main class="mdl-layout__content mdl-color--grey-100">
-
-        <!-- Contents of main: Map and markers API key google: AIzaSyBv6ZxK0eXeud-z6aZgAYu_H8XY9ESFvus -->
-      
-      <div>
-			
-				<h1>Welcome!</h1>
-				<input id="new-location" data-bind="value: inputcity, valueUpdate: 'afterkeydown', enterKey: toggleVisibility" placeholder="Where do you want to go?" autofocus>
-      </div>
-      
-      <div>  
-      
-      <img src="" data-bind="visible: showMap, attr: { src: fullUrl }">
-      <p data-bind="text: fullUrl"></p>      
+        </div>
       </div>
 
-      </main>
-    </div>
+  </main>
+  </div>
 
-    <script src="js/material.min.js"></script>
-    <script src="js/knockout/knockout-latest.js"></script>
-    <script src="js/jquery/jquery.min.js"></script>
-    <script src="js/director/director.js"></script>
-    <script src="common/models/model.js"></script>
-    <script src="common/views/map-view.js"></script>
+  <script src="js/material.min.js"></script>
+  <script src="js/knockout/knockout-latest.js"></script>
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/director/director.js"></script>
+  <script src="common/models/model.js"></script>
+  <script src="common/views/map-view.js"></script>
 
-  </body>
+</body>
+
 </html>

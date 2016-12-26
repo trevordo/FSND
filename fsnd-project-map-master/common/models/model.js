@@ -1,6 +1,5 @@
 function MapModel() {
 	var self = this;
-	this.showMap = ko.observable(false);
 
 	this.mapUrl = ko.observable("https://maps.googleapis.com/maps/api/staticmap?center=");
 	this.inputcity = ko.observable();

@@ -58,13 +58,19 @@
     //map view model
     function MapViewModel() {
         var self = this;
-        this.showMap = ko.observable(false);
+        // call MapModel method
         this.mapModel = MapModel();
 
-        this.toggleVisibility = function() {
+        // visibility options
+        this.showMap = ko.observable(false);
+        this.hideStart = ko.observable(true);
+        
+
+        this.toggleMapVisibility = function() {
             //var l = this.inputcity().trim();
             //if (l) {
             self.showMap(!self.showMap());
+            self.hideStart(!self.hideStart());
             //}
         }.bind(this);
 
