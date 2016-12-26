@@ -17,6 +17,14 @@
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 }
+
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: #767777;
+  font-weight: 500;
+}
+
 .project-avatar {
   width: 48px;
   height: 48px;
@@ -121,31 +129,7 @@ html, body {
   margin-right: 32px;
 }
 
-.project-content {
-  max-width: 1080px;
-}
-
-
-
-/* TODO: Find a proper solution to have the graphs
- * not float around outside their container in IE10/11.
- * Using a browserhacks.com solution for now.
- */
-
-
-.project-cards {
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-align-content: flex-start;
-      -ms-flex-line-pack: start;
-          align-content: flex-start;
-}
-.project-cards .project-separator {
-  height: 32px;
-}
-.project-cards .mdl-card__title.mdl-card__title {
+.project-cards .mdl-card__title .mdl-card__title .mdl-card__media{
   color: white;
   font-size: 24px;
   font-weight: 400;
@@ -196,11 +180,3 @@ html, body {
       -ms-flex-align: center;
           align-items: center;
 }
-
-.logo-font {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  line-height: 1;
-  color: #767777;
-  font-weight: 500;
-}
-

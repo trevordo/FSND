@@ -44,6 +44,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/material.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -71,8 +72,6 @@
         </div>
         <div>
           <span>PUT TABS HERE</span>
-          <!-- Example for added a spacer div
-            <div class="mdl-layout-spacer"></div> -->
         </div>
       </header>
       <nav class="project-navigation mdl-navigation mdl-color--blue-grey-800">
@@ -84,12 +83,12 @@
     <main class="mdl-layout__content mdl-color--grey-100">
 
       <!-- Contents of main: input and map -->
-      <div class="mdl-typography--text-center welcome-slogan" data-bind="visible: hideStart">
-        <div class="mdl-card mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col mdl-grid main-container">
+      <div class="mdl-typography--text-center" style="height: 90vh;" data-bind="visible: hideStart">
+        <div class="mdl-card mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col mdl-grid" style="height: 90%;">
           <div class="mdl-card__media">
           </div>
           <div class="mdl-card__supporting-text">
-            Welcome to your Neighborhood!
+            <h1>Welcome to your Neighborhood!</h1>
           </div>
           <div class="mdl-card__supporting-text">
             <div class="mdl-textfield mdl-js-textfield">
@@ -99,9 +98,10 @@
           </div>
         </div>
       </div>
+
       <!--MAP view -->
-      <div data-bind="visible: showMap">
-        <div class="mdl-card mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col mdl-grid main-card">
+      <div  style="height: 90vh;" data-bind="visible: showMap">
+        <div style="height: 90%;" class="mdl-card mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col mdl-grid main-card">
           <div class="mdl-card__media"><img src="" data-bind="attr: { src: fullUrl }">
           </div>
         </div>
